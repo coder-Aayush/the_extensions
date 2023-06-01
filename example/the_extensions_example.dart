@@ -17,5 +17,7 @@ void main() {
   final takeList = list.take(2);
   print(takeList); // [1, 2]
 
-  // remove 
+  // update
+  final updateList = list.update(1, 1);
+  print(updateList); // [1, 2, 2]
 }

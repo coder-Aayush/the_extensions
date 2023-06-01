@@ -62,4 +62,17 @@ extension ListX<T> on List<T> {
   /// ```
   /// output: [1, 2, 3, 4, 5]
   List<T> distinct() => toSet().toList();
+
+  // update list and return a new list
+  /// ```dart
+  /// final list = [1, 2, 3, 4, 5];
+  /// final updateList = list.update(1, 2);
+  /// ```
+  /// output: [1, 2, 2, 4, 5]
+  List<T> update(int pos, T t) {
+    List<T> list = [];
+    list.add(t);
+    replaceRange(pos, pos + 1, list);
+    return this;
+  }
 }
