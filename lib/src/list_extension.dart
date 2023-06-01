@@ -75,4 +75,23 @@ extension ListX<T> on List<T> {
     replaceRange(pos, pos + 1, list);
     return this;
   }
+
+  /// group by list and return a new list
+  /// ```dart
+  /// final list = [1, 2, 3, 4, 5];
+  /// final groupByList = list.groupBy((item) => item % 2 == 0);
+  /// ```
+  /// output: {false: [1, 3, 5], true: [2, 4]}
+  Map<K, List<T>> groupBy<K>(K Function(T) key) {
+    final Map<K, List<T>> map = {};
+    for (final item in this) {
+      final k = key(item);
+      if (map.containsKey(k)) {
+        map[k]!.add(item);
+      } else {
+        map[k] = [item];
+      }
+    }
+    return map;
+  }
 }
