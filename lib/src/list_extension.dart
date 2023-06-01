@@ -103,7 +103,6 @@ extension ListX<T> on List<T> {
   /// final swapList = list.swap(1, 2);
   /// ```
   /// output: [1, 3, 2, 4, 5]
-
   List<T> swap(T data, T toSwap) {
     final index = indexOf(data);
     final index2 = indexOf(toSwap);
@@ -113,9 +112,32 @@ extension ListX<T> on List<T> {
     return this;
   }
 
+  // get random item from list
+  /// ```dart
+  /// final list = [1, 2, 3, 4, 5];
+  /// final shuffleList = list.random();
+  /// ```
   T random() {
     Random generator = Random();
     final index = generator.nextInt(length);
     return toList()[index];
+  }
+
+  /// shuffle list and return a new list
+  /// ```dart
+  /// final list = [1, 2, 3, 4, 5];
+  /// final shuffleList = list.shuffle();
+  /// ```
+  /// output: [3, 1, 5, 2, 4]
+  List<T> shuffleItem() {
+    Random generator = Random();
+    final shuffledList = toList();
+    for (var i = shuffledList.length - 1; i > 0; i--) {
+      final j = generator.nextInt(i + 1);
+      final temp = shuffledList[i];
+      shuffledList[i] = shuffledList[j];
+      shuffledList[j] = temp;
+    }
+    return shuffledList;
   }
 }

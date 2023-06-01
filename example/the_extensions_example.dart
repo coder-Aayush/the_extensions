@@ -52,6 +52,10 @@ void main() {
   // get random
   final randomMessage = message.random();
   print(randomMessage);
+
+  // suffle message
+  final suffleMessage = message.shuffleItem();
+  print(suffleMessage);
 }
 
 class Message {
