@@ -31,8 +31,8 @@ void main() {
   print(groupByList); // {18: [Person(name: John, age: 18)], 20: [Person(name: Jane, age: 20), Person(name: John, age: 20)]}
 
   final message = [
-    Message('Hello', 'John', 'Jane', DateTime.now()),
-    Message('Hi', 'Jane', 'John', DateTime.now()),
+    Message('Hello', 'John', 'Jane', DateTime.now().subtract(Duration(days: 1))),
+    Message('Hi', 'Jane', 'John', DateTime.now()..subtract(Duration(days: 2))),
     Message('How are you?', 'John', 'Jane', DateTime.now()),
     Message('I am fine', 'Jane', 'John', DateTime.now()),
   ];
@@ -44,6 +44,14 @@ void main() {
   // group by timestamp
   final groupByList3 = message.groupBy((item) => item.createdAt);
   print(groupByList3);
+
+  // swap message
+  final swapMessage = message.swap(message.first, message.last);
+  print(swapMessage);
+
+  // get random
+  final randomMessage = message.random();
+  print(randomMessage);
 }
 
 class Message {

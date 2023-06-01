@@ -1,3 +1,5 @@
+import 'dart:math';
+
 extension ListX<T> on List<T> {
   /// Returns a new list with the elements of this that are not null.
   List<T> whereNotNull() => whereType<T>().toList();
@@ -93,5 +95,27 @@ extension ListX<T> on List<T> {
       }
     }
     return map;
+  }
+
+  /// returns a list with two swapped items
+  /// ```dart
+  /// final list = [1, 2, 3, 4, 5];
+  /// final swapList = list.swap(1, 2);
+  /// ```
+  /// output: [1, 3, 2, 4, 5]
+
+  List<T> swap(T data, T toSwap) {
+    final index = indexOf(data);
+    final index2 = indexOf(toSwap);
+    final temp = this[index];
+    this[index] = this[index2];
+    this[index2] = temp;
+    return this;
+  }
+
+  T random() {
+    Random generator = Random();
+    final index = generator.nextInt(length);
+    return toList()[index];
   }
 }
