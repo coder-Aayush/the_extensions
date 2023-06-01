@@ -1,3 +1,5 @@
+library the_extensions;
+
 import 'dart:math';
 
 extension ListX<T> on List<T> {
@@ -47,7 +49,7 @@ extension ListX<T> on List<T> {
   /// final removeList = list.remove(2);
   /// ```
   /// output: [1, 3, 4, 5]
-  List<T> remove(T item) => where((e) => e != item).toList();
+  List<T> removeItem(T item) => where((e) => e != item).toList();
 
   // count list and return a new list
   /// ```dart
@@ -103,8 +105,7 @@ extension ListX<T> on List<T> {
   /// final swapList = list.swap(1, 2);
   /// ```
   /// output: [1, 3, 2, 4, 5]
-  List<T> swap(T data, T toSwap) {
-    final index = indexOf(data);
+  List<T> swap(int index, T toSwap) {
     final index2 = indexOf(toSwap);
     final temp = this[index];
     this[index] = this[index2];

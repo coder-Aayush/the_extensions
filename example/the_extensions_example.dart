@@ -46,7 +46,7 @@ void main() {
   print(groupByList3);
 
   // swap message
-  final swapMessage = message.swap(message.first, message.last);
+  final swapMessage = message.swap(1, message.last);
   print(swapMessage);
 
   // get random
