@@ -11,7 +11,8 @@ extension ListX<T> on List<T> {
   /// final list = [1, 2, 3];
   /// final reversedList = list.reverse();
   /// ```
-  List<T> reverse({bool isReverse = true}) => isReverse ? reversed.toList() : this;
+  List<T> reverse({bool isReverse = true}) =>
+      isReverse ? reversed.toList() : this;
 
   /// chunks list and return a new list
   /// ```dart

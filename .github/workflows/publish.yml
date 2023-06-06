@@ -1,0 +1,22 @@
+name: Format, run test and publish to pub.dev
+
+on:
+  pull_request:
+
+# Publish using custom workflow
+jobs:
+    formate:
+        name: Format
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: dart-lang/setup-dart@v1
+              with:
+                  channel: 'stable'
+            - name: Format
+              run: dart format --set-exit-if-changed .
+            
+            - name: Run Test
+              run: dart test
+    
+    

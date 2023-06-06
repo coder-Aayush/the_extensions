@@ -26,7 +26,4 @@ extension BoolX on bool {
   /// ```
   /// output: false
   bool get not => !this;
-
-
-  
 }

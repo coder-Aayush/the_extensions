@@ -28,10 +28,12 @@ void main() {
     Person('John', 20),
   ];
   final groupByList = persons.groupBy((item) => item.age);
-  print(groupByList); // {18: [Person(name: John, age: 18)], 20: [Person(name: Jane, age: 20), Person(name: John, age: 20)]}
+  print(
+      groupByList); // {18: [Person(name: John, age: 18)], 20: [Person(name: Jane, age: 20), Person(name: John, age: 20)]}
 
   final message = [
-    Message('Hello', 'John', 'Jane', DateTime.now().subtract(Duration(days: 1))),
+    Message(
+        'Hello', 'John', 'Jane', DateTime.now().subtract(Duration(days: 1))),
     Message('Hi', 'Jane', 'John', DateTime.now()..subtract(Duration(days: 2))),
     Message('How are you?', 'John', 'Jane', DateTime.now()),
     Message('I am fine', 'Jane', 'John', DateTime.now()),
@@ -65,7 +67,8 @@ class Message {
   final DateTime createdAt;
   Message(this.content, this.sender, this.receiver, this.createdAt);
   @override
-  String toString() => 'Message(content: $content, sender: $sender, receiver: $receiver, createdAt: $createdAt)';
+  String toString() =>
+      'Message(content: $content, sender: $sender, receiver: $receiver, createdAt: $createdAt)';
 }
 
 class Person {
