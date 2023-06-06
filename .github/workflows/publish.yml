@@ -7,7 +7,7 @@ on:
 # Publish using custom workflow
 jobs:
     formate:
-        name: Format
+        name: Format and Run test
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
