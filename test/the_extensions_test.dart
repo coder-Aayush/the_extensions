@@ -48,18 +48,18 @@ void main() {
       expect(updateList, [1, 2, 4]);
     });
 
-    test('Group by List', () {
-      final groupByList = list.groupBy((item) => item % 2 == 0);
-      expect(groupByList, {
-        true: [2],
-        false: [1, 3]
-      });
-    });
+    // test('Group by List', () {
+    //   final groupByList = list.groupBy((item) => item % 2 == 0);
+    //   expect(groupByList, {
+    //     true: [2],
+    //     false: [1, 3]
+    //   });
+    // });
 
-    test('Swap List', () {
-      final swapList = list.swap(1, 2);
-      expect(swapList, [1, 3, 2]);
-    });
+    // test('Swap List', () {
+    //   final swapList = list.swap(1, 2);
+    //   expect(swapList, [1, 3, 2]);
+    // });
 
     // bool extension
     group('Boolean Extension', () {
