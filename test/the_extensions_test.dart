@@ -60,5 +60,28 @@ void main() {
       final swapList = list.swap(1, 2);
       expect(swapList, [1, 3, 2]);
     });
+
+    // bool extension
+    group('Boolean Extension', () {
+      test('Is True', () {
+        final isTrue = true.isTrue;
+        expect(isTrue, true);
+      });
+
+      test('Is False', () {
+        final isFalse = false.isFalse;
+        expect(isFalse, true);
+      });
+
+      test('Toggle', () {
+        final toggle = true.toggle;
+        expect(toggle, false);
+      });
+
+      test('Not', () {
+        final not = true.not;
+        expect(not, false);
+      });
+    });
   });
 }
