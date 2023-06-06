@@ -2,6 +2,7 @@ name: Format, run test and publish to pub.dev
 
 on:
   pull_request:
+  push:
 
 # Publish using custom workflow
 jobs:
